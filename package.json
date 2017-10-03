@@ -1,0 +1,22 @@
+{
+  "name": "vue2-tutorial",
+  "version": "1.0.0",
+  "description": "This is tutorial of Vue.js version 2.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/supaiku2452/vue2-tutorial.git"
+  },
+  "keywords": [
+    "Vue.js"
+  ],
+  "author": "supaiku2452",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/supaiku2452/vue2-tutorial/issues"
+  },
+  "homepage": "https://github.com/supaiku2452/vue2-tutorial#readme"
+}
