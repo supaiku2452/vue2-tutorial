@@ -83,6 +83,13 @@ new _vue2.default({
    }
 });
 
+new _vue2.default({
+   el: '#app-2',
+   data: {
+      message: 'You loaded this page on ' + new Date().toLocaleString()
+   }
+});
+
 /***/ }),
 /* 1 */
 /***/ (function(module, exports, __webpack_require__) {

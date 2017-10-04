@@ -86,3 +86,34 @@ new Vue({
 </body>
 </html>
 ```
+
+3. webpackを実行する。
+
+4. index.htmlを表示して、画面にメッセージが表示されることを確認する。
+
+## ディレクティブを使ってみる
+
+1. **src/app.js**に新しいオブジェクトを追加する。
+
+```javascript
+new Vue({
+   el: '#app-2',
+   data: {
+       message: 'You loaded this page on ' + new Date().toLocaleString()
+   }
+});
+```
+
+2. **index.html**に新しい要素(app-2)を追加する。
+
+```html
+    <div id="app-2">
+        <span v-bind:title="message">
+            Hover your mouse over me for a few seconds to see my dynamically bound title.
+        </span>
+    </div>
+```
+
+3. webpackを実行する。
+
+4. index.htmlを表示して、メッセージが表示されることを確認する。次に、メッセージにマウスを数秒あてると別のメッセージが表示されることを確認する。
