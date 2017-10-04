@@ -1,0 +1,29 @@
+{
+  "name": "vueapp02",
+  "version": "1.0.0",
+  "description": "This is easy Vue.js version 2 tutorial.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/supaiku2452/vue2-tutorial.git"
+  },
+  "keywords": [
+    "Vue.js"
+  ],
+  "author": "supaiku2452",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/supaiku2452/vue2-tutorial/issues"
+  },
+  "homepage": "https://github.com/supaiku2452/vue2-tutorial#readme",
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "vue": "^2.4.4",
+    "webpack": "^3.6.0"
+  }
+}
