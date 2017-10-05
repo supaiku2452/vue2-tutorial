@@ -77,17 +77,54 @@ var _vue2 = _interopRequireDefault(_vue);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 new _vue2.default({
-   el: '#app',
-   data: {
-      message: 'Hello Vue!!!'
-   }
+    el: '#app',
+    data: {
+        message: 'Hello Vue!!!'
+    }
 });
 
 new _vue2.default({
-   el: '#app-2',
-   data: {
-      message: 'You loaded this page on ' + new Date().toLocaleString()
-   }
+    el: '#app-2',
+    data: {
+        message: 'You loaded this page on ' + new Date().toLocaleString()
+    }
+});
+
+new _vue2.default({
+    el: '#app-3',
+    data: {
+        seen: true
+    }
+});
+
+new _vue2.default({
+    el: '#app-4',
+    data: {
+        todos: [{ text: 'Learn JavaScript' }, { text: 'Learn Vue' }, { text: 'Build something awesome' }],
+        fruits: ["banana", "apple", "strawberry"]
+    }
+});
+
+new _vue2.default({
+    el: '#app-5',
+    data: {
+        message: 'Hello Vue.js!'
+    },
+    methods: {
+        reverseMessage: function reverseMessage() {
+            this.message = this.message.split('').reverse().join('');
+        },
+        upperMessage: function upperMessage(message) {
+            alert(message.toUpperCase());
+        }
+    }
+});
+
+new _vue2.default({
+    el: '#app-6',
+    data: {
+        message: 'Hello Vue.js!'
+    }
 });
 
 /***/ }),

@@ -14,6 +14,42 @@
             Hover your mouse over me for a few seconds to see my dynamically bound title.
         </span>
     </div>
+
+    <div id="app-3">
+        <span v-if="seen">
+            Now you see me.
+        </span>
+    </div>
+
+    <div id="app-4">
+        <ol>
+            <li v-for="todo in todos">
+                {{ todo.text }}
+            </li>
+        </ol>
+        <ol>
+            <li v-for="fruit in fruits">
+                {{ fruit }}
+            </li>
+        </ol>
+    </div>
+
+    <div id="app-5">
+        <p>
+            {{ message }}
+        </p>
+        <button v-on:click="reverseMessage">Reverse Message</button>
+
+        <button v-on:click="upperMessage('click me!')">click me!</button>
+    </div>
+
+    <div id="app-6">
+        <p>
+            {{ message }}
+        </p>
+        <input v-model="message">
+    </div>
+
     <script type="text/javascript" src="dist/app.bundle.js"></script>
 </body>
 </html>
