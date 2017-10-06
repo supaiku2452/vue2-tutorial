@@ -56,3 +56,7 @@ new Vue({
        message: 'Hello Vue.js!'
    }
 });
+
+Vue.component('my-component', {
+    template: '<div>A custom component.</div>'
+});

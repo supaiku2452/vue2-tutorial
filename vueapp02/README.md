@@ -264,3 +264,82 @@ new Vue({
 4. 表示された画面を確認し、入力項目の内容が表示されることを確認する。
 
 ![実行結果](https://github.com/supaiku2452/images/blob/master/vue2-tutorial/vueapp02/image-4.png?raw=true)
+
+## コンポーネントを定義してみる
+Vueでは、コンポーネントと単一ファイルコンポーネントがある。今回は、それぞれのコンポーネントの定義方法についてまとめる。
+
+### コンポーネント
+
+1. **index-app7.html**を新規作成する。こちらのhtmlには、cdn経由でvueを取得する定義(scriptタグ)を追加する。
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue.js Tutorial - app-7</title>
+
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+</body>
+</html>
+```
+
+2. bodyに、カスタムコンポーネントである*todo-item*を定義する。また、v-bindでv-forの要素であるitemをコンポーネントにバインドする。
+
+```html
+<body>
+    <div id="app-7">
+      <ol>
+        <!--
+          todo オブジェクトによって各 todo-item を提供します。
+          それは、内容を動的にできるように表します。
+          また後述する "key" で各コンポーネントに提供する必要があります。
+        -->
+        <todo-item v-for="item in groceryList" v-bind:todo="item"></todo-item>
+      </ol>
+    </div>
+</body>
+</html>
+```
+
+3. scriptタグを追加し、その中にコンポーネントとインスタンスの定義を追加する。コンポーネントでは、todo-item(id)を定義し、テンプレートを定義する。propsを定義すると、親コンポーネント(app-7)から値を受け取ることができる。
+今回は、v-bindに*todo*が指定されているため、`props['todo']`と定義する。
+
+```html
+<body>
+    <div id="app-7">
+      <ol>
+        <!--
+          todo オブジェクトによって各 todo-item を提供します。
+          それは、内容を動的にできるように表します。
+          また後述する "key" で各コンポーネントに提供する必要があります。
+        -->
+        <todo-item v-for="item in groceryList" v-bind:todo="item"></todo-item>
+      </ol>
+    </div>
+
+    <script type="text/javascript">
+        Vue.component('todo-item', {
+            props: ['todo'],
+            template: '<li>{{ todo.text }}</li>'
+        })
+        var app7 = new Vue({
+            el: '#app-7',
+            data: {
+                groceryList: [
+                    { id: 0, text: 'Vegetables' },
+                    { id: 1, text: 'Cheese' },
+                    { id: 2, text: 'Whatever else humans are supposed to eat' }
+                ]
+            }
+        })
+    </script>
+</body>
+```
+
+4. **index-app7.html**を表示し、groceryListの中身が表示されていることを確認する。
+
+![実行結果](https://github.com/supaiku2452/images/blob/master/vue2-tutorial/vueapp02/image-5.png?raw=true)
+

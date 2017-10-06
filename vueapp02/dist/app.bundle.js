@@ -127,6 +127,17 @@ new _vue2.default({
     }
 });
 
+new _vue2.default({
+    el: '#app-7',
+    data: {
+        groceryList: [{ id: 0, text: 'Vegetables' }, { id: 1, text: 'Cheese' }, { id: 2, text: 'Whatever else humans are supposed to eat' }]
+    }
+});
+
+_vue2.default.component('my-component', {
+    template: '<div>A custom component.</div>'
+});
+
 /***/ }),
 /* 1 */
 /***/ (function(module, exports, __webpack_require__) {
