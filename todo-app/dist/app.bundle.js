@@ -10942,7 +10942,7 @@ var render = function() {
               [
                 _c(
                   "span",
-                  { class: { doing: todo.isDone, done: !todo.isDone } },
+                  { class: { doing: !todo.isDone, done: todo.isDone } },
                   [_vm._v(_vm._s(todo.detail))]
                 )
               ]
@@ -10999,7 +10999,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n.doing {\n    text-decoration: line-through;\n}\n.done {\n    font-style: italic;\n}\n", ""]);
+exports.push([module.i, "\n.doing {\n    font-style: italic;\n}\n.done {\n    text-decoration: line-through;\n}\n", ""]);
 
 // exports
 
