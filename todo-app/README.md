@@ -15,10 +15,13 @@ Vue.jsを利用したTodoアプリケーションです。
 ## 機能
 
 1. TODOリストの表示
+
 ![実行結果](https://github.com/supaiku2452/images/blob/master/vue2-tutorial/todo-app/image-1.png?raw=true)
 
 2. TODOの追加
+
 ![実行結果](https://github.com/supaiku2452/images/blob/master/vue2-tutorial/todo-app/image-2.png?raw=true)
 
 3. TODOのステータス更新
+
 ![実行結果](https://github.com/supaiku2452/images/blob/master/vue2-tutorial/todo-app/image-3.png?raw=true)
