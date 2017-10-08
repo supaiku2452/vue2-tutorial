@@ -12,12 +12,16 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.js$/, // あとで拡張子vueも追加する
+                test: /\.js$|\.vue$/,
                 exclude: [/node_modules/],
                 use: [{
                     loader: 'babel-loader',
                     options: { presets: ['es2015'] }
                 }]
+            },
+            {
+                test: /\.vue$/,
+                loader: 'vue-loader'
             }
         ]
     },

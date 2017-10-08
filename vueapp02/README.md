@@ -1,6 +1,6 @@
 # Vue.js チュートリアル
 
-Vue.jsのチュートリアルです。基本的には、[Vue.js 公式ページ(日本)](https://jp.vuejs.org/)を参考にしています。
+Vue.jsのチュートリアルです。基本的には、[Vue.js 公式ページ(日本) はじめに](https://jp.vuejs.org/)を参考にしています。
 
 ## 準備(パッケージとwebpack)
 
@@ -343,3 +343,68 @@ Vueでは、コンポーネントと単一ファイルコンポーネントが�
 
 ![実行結果](https://github.com/supaiku2452/images/blob/master/vue2-tutorial/vueapp02/image-5.png?raw=true)
 
+### 単一ファイルコンポーネント
+
+1. src配下に**MyComponent.vue**を作成する。MyComponentには、*template*と*script*を定義する。
+scriptタグの*props*には、親コンポーネントからバインドされるオブジェクトを宣言する。
+```javascript
+<template>
+    <li>
+        {{ todo.text }}
+    </li>
+</template>
+
+<script>
+    export default {
+        props: ['todo']
+    }
+</script>
+```
+
+2. **src/app.js**に、新しいオブジェクトと1.で作成した子コンポーネントのインポート文を追加する。
+
+```javascript
+import myComponent from './MyComponent.vue';
+
+new Vue({
+    el: '#app-7',
+    data: {
+        groceryList: [
+            { id: 0, text: 'Vegetables' },
+            { id: 1, text: 'Cheese' },
+            { id: 2, text: 'Whatever else humans are supposed to eat' }
+       ]
+
+    },
+    components: {
+       'myComponent': myComponent
+    },
+    template:`
+    <div>
+        <ol>
+            <myComponent v-for="todo in groceryList" v-bind:todo="todo"></myComponent>
+        </ol>
+    </div>
+    `
+});
+```
+
+3. **webpack.config.js**を修正する。あわせて、必要なパッケージ(*vue-loader*,*vue-template-compiler*)をインストールする。
+
+```javascript
+    module: {
+        rules: [
+        // ...
+            {
+                test: /\.vue$/,
+                loader: 'vue-loader'
+            }
+        ]
+    },
+```
+
+3. webpackを実行する。
+
+4. **index**を表示し、groceryListの中身が表示されていることを確認する。
+
+![実行結果](https://github.com/supaiku2452/images/blob/master/vue2-tutorial/vueapp02/image-6.png?raw=true)
